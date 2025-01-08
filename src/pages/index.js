@@ -1,19 +1,22 @@
 import { getLang } from '../components/Lang';
 import Link from 'next/link'
-import { FaHome, FaRegUser, FaFileAlt, FaLanguage , FaGithub, FaRegFile, FaLinkedinIn, FaMailBulk } from "react-icons/fa";
+import { FaHome, FaRegUser, FaFileAlt, FaAddressCard , FaGithub, FaRegFile, FaLinkedinIn, FaMailBulk } from "react-icons/fa";
+import { useContext } from 'react';
+import { CountryContext } from "./_app";
 
 
 
-export default function Home({country}) {
+export default function Home() {
 
+    const country = useContext(CountryContext);
 
 	const Language = getLang(country)
 
 	return (
-		<div className='h-screen  lg:container lg:mx-auto  bg-cover bg-center bg-no-repeat home_bg relative overflow-y-hidden'>
+		<div className='h-screen  lg:container lg:mx-auto  bg-cover bg-center bg-no-repeat home_bg  relative'>
 
 
-			<div className=" h-full w-full " style={{ backgroundColor: "#0F172ACC" }}>
+			<div className=" h-full w-full absolute  top-0 left-0" style={{ backgroundColor: "#0F172ACC" }}>
 
 				{/* Nav 1 */}
 				<div className='w-1/2 mx-auto hidden lg:block '>
@@ -40,10 +43,30 @@ export default function Home({country}) {
 
 						<li>
 							<details>
-								<summary> <span><FaLanguage /></span>{Language.nav_language}</summary>
-								<ul className="absolute bg-base-100  p-2">
-									<li><a>English</a></li>
-									<li><a>Francais</a></li>
+								<summary> <span><FaAddressCard  /></span>{Language.nav_contact}</summary>
+								<ul data-theme="night" className="menu menu-vertical rounded-box px-1">
+									<li ><a href="https://linkedin.com/in/mustaphatg" target='_blank'>
+										<span><FaLinkedinIn /></span>
+										<span>Linkedin</span>
+									</a></li>
+									<li>
+										<a href="https://github.com/mustaphatg" target='_blank'>
+											<span><FaGithub /></span>
+											<span>Github</span>
+										</a>
+									</li>
+									<li >
+										<a href="https://drive.google.com/file/d/1ReKwM_aDlwuxWJ18g9WuIJh_UBubJvy8/view?usp=drive_link" target='_blank'>
+											<span><FaRegFile /></span>
+											<span>Resume</span>
+										</a>
+									</li>
+									<li >
+										<a href="mailto:mustaphatg.001@gmail.com" target='_blank'>
+											<span><FaMailBulk /></span>
+											<span>Mail</span>
+										</a>
+									</li>
 								</ul>
 							</details>
 						</li>
@@ -74,13 +97,13 @@ export default function Home({country}) {
 								<li><Link href="/">{Language.nav_home}</Link></li>
 								<li><Link href="/about">{Language.nav_about}</Link></li>
 								<li><Link href="/projects">{Language.nav_project}</Link></li>
-								<li>
+								{/* <li>
 									<a>{Language.nav_language}</a>
 									<ul className="p-2">
 										<li><a>English</a></li>
 										<li><a>Francais</a></li>
 									</ul>
-								</li>
+								</li> */}
 							</ul>
 						</div>
 						<a className="btn btn-ghost text-xl btn-actve">Ibrahim Mustapha</a>
@@ -117,9 +140,9 @@ export default function Home({country}) {
 					</div>
 
 
-					<div className='mx-auto w-4/5 mt-5'>
+					<div className='mx-auto w-4/5 mt-5 lg:hidden'>
 
-						<ul data-theme="night" className="menu menu-horizontal rounded-box px-1 justify-between">
+						<ul data-theme="night" className="menu menu-horizontal rounded-box px-1 justify-around">
 							<li ><a href="https://linkedin.com/in/mustaphatg" target='_blank'>
 								<span><FaLinkedinIn /></span>
 								<span>Linkedin</span>
