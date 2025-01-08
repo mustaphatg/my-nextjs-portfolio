@@ -47,15 +47,15 @@ const  MyProject = [
         name : 'Nairaland Vuejs Ui',
         info : '',
         tags : [],
-        link : 'https://nairaland.mustapha.com.ng//',
+        link : 'https://nairaland.mustapha.com.ng/',
         image : '/images/nairaland.png'
     },
     {
-        name : 'Nairaland Vuejs Ui',
+        name : 'Nairaland Reactjs Ui',
         info : '',
         tags : [],
-        link : 'https://nairaland.mustapha.com.ng//',
-        image : '/images/nairaland.png'
+        link : 'https://nairaland1.netlify.app/',
+        image : '/images/Nairaland2.png'
     }
 ]
 

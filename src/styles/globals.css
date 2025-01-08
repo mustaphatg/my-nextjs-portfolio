@@ -37,6 +37,26 @@
   /* align-items: center; */
 }
 
-.cursive_text{
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+/* scroll bar */
+::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  background: rgb(148 163 184);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body {
+  /* Make the scrollbar thin */
+  scrollbar-width: thin;
+
+  /* Set the colors of the thumb and track areas */
+  /* Thumb color: #718096 */
+  /* Track color: #edf2f7 */
+  scrollbar-color: #718096 #edf2f7;
 }

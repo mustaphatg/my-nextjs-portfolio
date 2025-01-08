@@ -20,9 +20,9 @@ export default function Project({country}) {
             {/* projects */}
             <div className='flex flex-col md:flex-row md:flex-wrap mt-4 text-center'>
 
-                {MyProject.map(project => (
+                {MyProject.map((project, index) => (
 
-                    <div className="card glass w-auto m-2 mx-4 md:w-1/4 ">
+                    <div key={index} className="card glass w-auto m-2 mx-4 md:w-1/4 ">
                         <figure>
                             <Image
                                 src={project.image}

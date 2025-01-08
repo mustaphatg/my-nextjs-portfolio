@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getLang } from '../components/Lang';
-
+import { FaHome, FaRegUser, FaFileAlt, FaLanguage } from "react-icons/fa";
 
 
 // import Footer from './footer'
@@ -12,61 +12,76 @@ export default function Layout({ children }) {
 
 
     return (
-        <div className='md:container md:mx-auto '>
+            <div className='lg:container lg:mx-auto mb-10 relative'>
 
-            {/*  nav */}
-            <div data-theme="night" className="navbar bg-base-100 border-b-1 shadow-sm">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h7" />
-                            </svg>
+                {/*  nav */}
+                <div className="fixed top-0 left-0 z-50 navbar bg-base-100 shadow-sm shadow-gray-500 transition-all ">
+                    <div className="navbar-start">
+                        <div className="dropdown">
+                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h7" />
+                                </svg>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li><Link href="/">{Language.nav_home}</Link></li>
+                                <li><Link href="/about">{Language.nav_about}</Link></li>
+                                <li><Link href="/projects">{Language.nav_project}</Link></li>
+                                <li>
+                                    <a>{Language.nav_language}</a>
+                                    <ul className="p-2">
+                                        <li><a>English</a></li>
+                                        <li><a>Francais</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><Link href="/">{Language.nav_home}</Link></li>
-                            <li><Link href="/about">{Language.nav_about}</Link></li>
-                            <li><Link href="/projects">{Language.nav_project}</Link></li>
+                        <a className="btn btn-ghost text-xl ">Ibrahim Mustapha</a>
+                    </div>
+                    <div className="navbar-center hidden lg:flex text-sm">
+                        <ul className="menu menu-horizontal px-1">
                             <li>
-                                <a>{Language.nav_language}</a>
-                                <ul className="p-2">
-                                    <li><a>English</a></li>
-                                    <li><a>Francais</a></li>
-                                </ul>
+                                <Link href="/" >
+                                    <span><FaHome /></span>
+                                    <span>{Language.nav_home}aa</span>
+                                </Link>
+                            </li>
+                            <li >
+                                <Link href="/about" >
+                                    <span><FaRegUser /> </span>
+                                    <span>{Language.nav_about}</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/projects" >
+                                    <span><FaFileAlt /></span>
+                                    <span>{Language.nav_project}</span>
+                                </Link>
+                            </li>
+                            <li >
+                                <details className='z-50' >
+                                    <summary> <span><FaLanguage /></span>{Language.nav_language}</summary>
+                                    <ul className="absolute bg-base-100  p-2  rounded-t-none">
+                                        <li><a>English</a></li>
+                                        <li><a>Francais</a></li>
+                                    </ul>
+                                </details>
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl ">Ibrahim Mustapha</a>
-                </div>
-                <div className="navbar-center hidden lg:flex text-sm">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><Link href="/">{Language.nav_home}</Link></li>
-                        <li><Link href="/about">{Language.nav_about}</Link></li>
-                        <li><Link href="/projects">{Language.nav_project}</Link></li>
-                        <li >
-                            <details className='z-50' >
-                                <summary>{Language.nav_language}</summary>
-                                <ul className="absolute bg-base-100  p-2  rounded-t-none">
-                                    <li><a>English</a></li>
-                                    <li><a>Francais</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <label className="flex cursor-pointer gap-2">
+                    <div className="navbar-end">
+                        {/* <label className="flex cursor-pointer gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -94,18 +109,15 @@ export default function Layout({ children }) {
                             strokeLinejoin="round">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
-                    </label>
+                    </label> */}
+                    </div>
+                </div>
+
+                {/* content */}
+                <div className='bg-gray-600 px-4 py-10 mt-20 text-white w-11/12 mx-auto  rounded-md'>
+                    {children}
                 </div>
             </div>
-
-
-
-
-            {/* content */}
-            <div className='bg-gray-600 p-4 border text-white w-11/12 mx-auto mt-2 rounded-md'>
-                {children}
-            </div>
-        </div>
 
     )
 }

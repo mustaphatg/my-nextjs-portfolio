@@ -10,13 +10,13 @@ export default function Home({country}) {
 	const Language = getLang(country)
 
 	return (
-		<div className='h-screen md:container md:mx-auto  bg-cover bg-center bg-no-repeat home_bg relative'>
+		<div className='h-screen  lg:container lg:mx-auto  bg-cover bg-center bg-no-repeat home_bg relative overflow-y-hidden'>
 
 
-			<div className="absolute h-full w-full " style={{ backgroundColor: "#0F172ACC" }}>
+			<div className=" h-full w-full " style={{ backgroundColor: "#0F172ACC" }}>
 
 				{/* Nav 1 */}
-				<div className='w-1/2 mx-auto hidden lg:block'>
+				<div className='w-1/2 mx-auto hidden lg:block '>
 
 					<ul data-theme="night" className='home_nav justify-evenly bg-base-100 rounded-box mx-auto shadow-xl w-full mt-5 menu menu-horizontal px-1'>
 						<li>
@@ -51,7 +51,7 @@ export default function Home({country}) {
 				</div>
 
 				{/* Nav 2 */}
-				<div data-theme="night" className="lg:hidden navbar bg-base-100 border-b-1 shadow-sm">
+				<div data-theme="night" className=" absolute top-0 left-0 lg:hidden navbar bg-base-100 border-b-1 shadow-sm">
 					<div className="navbar-start">
 						<div className="dropdown">
 							<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -107,7 +107,7 @@ export default function Home({country}) {
 				{/* content */}
 				<div className='pl-3'>
 
-					<div className='flex flex-col mx-auto w-3/4 mt-24 sm:mt-40'>
+					<div className='flex flex-col mx-auto w-4/5 mt-60 sm:mt-44'>
 
 						<h1 className='font-bold text-gray-300 font-serif text-3xl my-3 '>Ibrahim Mustapha.</h1>
 
@@ -117,9 +117,9 @@ export default function Home({country}) {
 					</div>
 
 
-					<div className='mx-auto w-3/4 mt-5'>
+					<div className='mx-auto w-4/5 mt-5'>
 
-						<ul data-theme="night" className="menu menu-horizontal rounded-box px-1">
+						<ul data-theme="night" className="menu menu-horizontal rounded-box px-1 justify-between">
 							<li ><a href="https://linkedin.com/in/mustaphatg" target='_blank'>
 								<span><FaLinkedinIn /></span>
 								<span>Linkedin</span>
